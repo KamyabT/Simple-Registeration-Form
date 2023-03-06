@@ -19,7 +19,71 @@ code {
 
 /*********************************************/
 
+.mainDesign {
+  height: 100vh;
+  display: flex;
+  flex-grow: 1;
+  background-color: azure;
+}
+
+
+.sectionDesign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.formContainerDesign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: green;
+  padding: 15px 25px;
+}
+
+.headerDesign {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
 
 .formDesign {
   display: flex;
+  flex-direction: column;
+
+}
+
+
+.inputDesign {
+  padding: 15px 10px;
+  width: 250px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+
+.successAlert {
+  color: green;
+  font-weight: 700;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.alertDesign {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+.submitDesign {
+  width: 100%;
 }
