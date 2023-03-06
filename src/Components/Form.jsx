@@ -9,9 +9,13 @@ const Form = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (value.firstName && value.lastName && value.email) {
+      setValidated(true);
+    }
     setSubmitted(true);
   };
 
@@ -33,25 +37,34 @@ const Form = () => {
         <section>
           <div>
             <form className="formDesign" onSubmit={handleSubmit}>
-              {submitted ? <div>success !!!</div> : null}
+              {submitted && validated ? <div>success !!!</div> : null}
               <input
                 type="text"
                 placeholder="First Name"
                 value={value.firstName}
                 onChange={handleFirstNameChanges}
               ></input>
+              {submitted && !value.firstName ? (
+                <span>fill the first name</span>
+              ) : null}
               <input
                 type="text"
                 placeholder="Last Name"
                 value={value.lastName}
                 onChange={handleLastNameChanges}
               ></input>
+              {submitted && !value.lastName ? (
+                <span>fill the last name</span>
+              ) : null}
               <input
                 type="email"
                 placeholder="Email"
                 value={value.email}
                 onChange={handleEmailChanges}
               ></input>
+              {submitted && !value.email ? (
+                <span>fill the email</span>
+              ) : null}
               <input type="submit" value="Submit"></input>
             </form>
           </div>
