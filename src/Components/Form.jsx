@@ -8,6 +8,13 @@ const Form = () => {
     email: "",
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitted(true);
+  };
+
   const handleFirstNameChanges = (event) => {
     setValue({ ...value, firstName: event.target.value });
   };
@@ -25,7 +32,8 @@ const Form = () => {
       <main>
         <section>
           <div>
-            <form className="formDesign">
+            <form className="formDesign" onSubmit={handleSubmit}>
+              {submitted ? <div>success !!!</div> : null}
               <input
                 type="text"
                 placeholder="First Name"
